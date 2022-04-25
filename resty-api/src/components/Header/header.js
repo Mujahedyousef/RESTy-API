@@ -1,12 +1,12 @@
 import './header.css';
 export default function Header() {
 
-return(
-<div className="header">
+    return (
+        <div className="header">
 
-<h1>RESTY</h1>
+            <h1>RESTy</h1>
 
-</div>
-)
+        </div>
+    )
 
 }
