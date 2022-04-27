@@ -8,3 +8,6 @@ A browser based API testing tool
 
 ## UML
  ![uml](./images/uml_phase1.PNG)
+ 
+ ## PR
+ [PR class_26](https://github.com/Mujahedyousef/RESTy-API/pull/3)
