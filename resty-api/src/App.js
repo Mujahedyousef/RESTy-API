@@ -7,6 +7,21 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState({});
+const [method, setMethod] = useState("Get");
+const [url, setUrl] = useState("");
+
+function getUrl(e) {
+  e.preventDefault();
+  setUrl(e.target.value);
+  console.log(url);
+}
+function changeMethod(e) {
+  e.preventDefault();
+  setMethod(e.target.value);
+  console.log(method);
+}
+
+
 
   function onSubmit(e) {
     e.preventDefault();
@@ -24,7 +39,7 @@ function App() {
   return (
     <div id="app">
       <Header />
-      <Form onSubmit={onSubmit} />
+      <Form  changeMethod={changeMethod} getUrl={getUrl} />
       {setData ? <Results data_1={data} /> : null}
       <Footer />
     </div>
