@@ -1,8 +1,18 @@
 .header{
-    background-color: #836d6d;
+  /* width: 100%; */
+    background-color: #111;
     padding: 10px;
     border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
     text-align: center;
    align-items: center;
  cursor: pointer;
+}
+#title{
+  color: #eee;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0.5em auto;
+  text-align: center;
 }
