@@ -70,7 +70,7 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify({}) ,
       });
       const data = await response.json();
       
