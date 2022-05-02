@@ -9,12 +9,14 @@ function App() {
   const [data, setData] = useState({});
   const [method, setMethod] = useState("Get");
   const [url, setUrl] = useState();
+  const [headers, setHeaders] = useState({});
   const [body, setBody] = useState();
   const [loading, setLoading] = useState(false);
 
   function urlHandel(e) {
     e.preventDefault();
     setUrl(e.target.value);
+  
     // console.log(url);
   }
 
@@ -27,6 +29,7 @@ function App() {
     e.preventDefault();
     // console.log(method);
     setMethod(e.target.value);
+   
   }
 
   async function onSubmit(e) {
@@ -36,25 +39,35 @@ function App() {
       const response = await fetch(url);
       const data = await response.json();
       setData(data);
+      // console.log(data);
+      // console.log(method);
+      // console.log(url);
       
     } else if (method === "Post") {
       const response = await fetch(url, {
+        url: url,
         method: "Post",
         headers: {
-          // 'Accept': 'application/json',
+          'Accept': 'application/json',
           "Content-Type": "application/json",
         },
         body: JSON.stringify(
           JSON.parse(body)
           ),
       });
+      let header= await response.headers.get("Content-Type");
+      setHeaders({header});
       const data = await response.json();
+      
       setData(data);
     } else if (method === "Put") {
       const response = await fetch(url, {
+        url: url,
         method: "Put",
-        headers: {
+        headers: {  
+          'Accept': 'application/json',
           "Content-Type": "application/json",
+        
         },
         body: JSON.stringify(
           JSON.parse(body)
@@ -62,20 +75,20 @@ function App() {
       });
       const data = await response.json();
       setData(data);
-      console.log(data);
-      console.log(body);
+     
     } else if (method === "Delete") {
       const response = await fetch(url, {
+        url: url,
         method: "DELETE",
         headers: {
+          'Accept': 'application/json',
           "Content-Type": "application/json",
         },
         body: JSON.stringify({}) ,
       });
       const data = await response.json();
-      
       setData(data);
-
+      
     }
   }
 
@@ -87,8 +100,13 @@ function App() {
         handleBody={handleBody}
         urlHandel={urlHandel}
         onSubmit={onSubmit}
+        setData={setData}
       />
-      {loading ? <Results data={data} /> : null}
+      {loading ? <Results data={data}  method={method}
+        url={url}
+        body={body}
+        headers={headers}
+         /> : null}
       <Footer />
     </div>
   );
