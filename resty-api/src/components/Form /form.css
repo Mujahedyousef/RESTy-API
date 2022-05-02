@@ -13,7 +13,7 @@
   margin: 0;
   outline: none;
   padding: 0.25rem;
-  transition: all .4s ease-out;
+  transition: all 0.4s ease-out;
   width: 80%;
   margin-right: 20px;
 }
@@ -76,8 +76,18 @@
 
 #w3review {
   flex: 1 1;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0%;
-    height: 3rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  height: 3rem;
+}
+.button:hover {
+  background-color: rgb(201, 190, 190) !important;
+}
+#go:hover {
+  background-color: rgb(190, 174, 174) !important;
+}
+#urlInput:hover {
+  background-color: rgb(190, 174, 174) !important;
+  border-bottom: blue 1px solid;
 }
