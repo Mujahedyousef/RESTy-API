@@ -3,7 +3,7 @@ import { useState } from "react";
 import Form from "./components/Form /form";
 import Results from "./components/Results/results";
 import Footer from "./components/Footer/footer";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [data, setData] = useState({});

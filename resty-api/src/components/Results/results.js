@@ -1,4 +1,4 @@
-import './results.css';
+import './results.scss';
 import JSONPretty from "react-json-pretty";
 var JSONPrettyMon = require('react-json-pretty/dist/monikai');
 export default function Results(props){
