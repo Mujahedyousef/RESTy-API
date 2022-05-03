@@ -9,11 +9,11 @@ return(
    <dev className="method">
 
    
-  <div> Method: <JSONPretty theme={JSONPrettyMon} id='json-pretty' data={props.method} ></JSONPretty></div>
-  <div> URL:  <JSONPretty theme={JSONPrettyMon} id='json-pretty' data={props.url} ></JSONPretty></div>
+  <span id="button"> {props.method}</span>  
+  <span id='url'> {props.url} </span>
     </dev> 
-    <div>headers : <JSONPretty theme={JSONPrettyMon} id='json-pretty' data={props.headers} ></JSONPretty></div>
-    <div> Data:  <JSONPretty theme={JSONPrettyMon} id='json-pretty' data={props.data} ></JSONPretty></div>
+    <div className='result-container'>headers : <JSONPretty theme={JSONPrettyMon} id='json-pretty' data={props.headers} ></JSONPretty>
+     Data:  <JSONPretty theme={JSONPrettyMon} id='json-pretty' data={props.data} ></JSONPretty></div>
   </div>
 )}
 
