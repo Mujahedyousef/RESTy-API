@@ -1,4 +1,4 @@
-import './form.css';
+import './form.scss';
 export default function Form(props) {
 // console.log(props.urlHandel);
     return (
