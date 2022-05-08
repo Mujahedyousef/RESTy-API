@@ -1,5 +1,5 @@
 import Header from "./components/Header/header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./components/Form /form";
 import Results from "./components/Results/results";
 import Footer from "./components/Footer/footer";
@@ -13,6 +13,7 @@ function App() {
   const [body, setBody] = useState();
   const [loading, setLoading] = useState(false);
 
+  
   function urlHandel(e) {
     e.preventDefault();
     setUrl(e.target.value);
@@ -91,7 +92,29 @@ function App() {
       
     }
   }
+ 
 
+  const removeData = new Promise((resolve)=>{setTimeout(resolve,25000)})
+   
+  useEffect(() => {
+    removeData.then(()=>{
+      setData({});
+      setHeaders({});
+      setBody({});
+      setLoading(false);
+    }
+    )
+  }, [data]);
+  
+  // way two to remove data with out using useEffect
+ // removeData.then(()=>{
+    //   setData({})
+    //   setHeaders({})
+    //   setBody({})
+    //   setLoading(false)
+    // }
+
+  
   return (
     <div id="app">
       <Header />
@@ -104,7 +127,7 @@ function App() {
       />
       {loading ? <Results data={data}  method={method}
         url={url}
-        body={body}
+        // body={body}
         headers={headers}
          /> : null}
       <Footer />
