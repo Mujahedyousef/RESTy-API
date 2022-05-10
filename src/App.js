@@ -1,11 +1,21 @@
 import Header from "./components/Header/header";
-import { useState, useEffect } from "react";
+
+import { useState,useEffect,useReducer } from "react";
+import historyReducer, {addAction,removeAction} from './reducer';
 import Form from "./components/Form /form";
 import Results from "./components/Results/results";
 import Footer from "./components/Footer/footer";
 import "./App.scss";
 
+
+const initialState = {
+  history: [],
+  count: 0,
+
+}
+
 function App() {
+  const [state,dispatch] = useReducer(historyReducer,initialState);
   const [data, setData] = useState({});
   const [method, setMethod] = useState("Get");
   const [url, setUrl] = useState();
@@ -44,6 +54,7 @@ function App() {
       // console.log(method);
       // console.log(url);
       
+      dispatch(addAction(data));  
     } else if (method === "Post") {
       const response = await fetch(url, {
         url: url,
