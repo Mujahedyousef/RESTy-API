@@ -94,17 +94,17 @@ function App() {
   }
  
 
-  const removeData = new Promise((resolve)=>{setTimeout(resolve,25000)})
+  const remData = new Promise((resolve)=>{setTimeout(resolve,25000)})
    
   useEffect(() => {
-    removeData.then(()=>{
+    remData.then(()=>{
       setData({});
       setHeaders({});
       setBody({});
       setLoading(false);
     }
     )
-  }, [data]);
+  }, []);
   
   // way two to remove data with out using useEffect
  // removeData.then(()=>{
