@@ -46,4 +46,17 @@ A browser based API testing tool
 | name    | Links                                                    |
 | ------- | -------------------------------------------------------- |
 | Website | [](https://classy-frangipane-affa7c.netlify.app/)                                                     |
-| PR      | [PR](https://github.com/Mujahedyousef/RESTy-API/pull/12) |
+| PR      | [PR]() |
+----
+### phase_4
+
+In phase 4, we will be tracking every API call and storing it in history
+
+* The following user stories detail the major functionality for this phase of the project.
+
+* As a user, I want to see a list of my previous API calls, so that I can see the results again, quickly
+
+| name    | Links                                                    |
+| ------- | -------------------------------------------------------- |
+| Website | [Link]()                                                     |
+| PR      | [PR]() |
