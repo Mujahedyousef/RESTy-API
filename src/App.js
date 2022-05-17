@@ -15,8 +15,7 @@ const initialState = {
 function App() {
   const [state, dispatch] = useReducer(historyReducer, initialState);
   const [render, setRender] = useState(false);
-  const [data, setData] = useState({});
-  const [method, setMethod] = useState("Get");
+  const [data, setData] = useState({});  const [method, setMethod] = useState("Get");
   const [url, setUrl] = useState();
   const [headers, setHeaders] = useState({});
   const [body, setBody] = useState();
